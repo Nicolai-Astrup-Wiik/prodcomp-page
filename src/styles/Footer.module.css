@@ -1,0 +1,67 @@
+/* Footer Container */
+.footer {
+	position: fixed;
+	display: flex;
+	justify-content: space-between; /* Space between left and right items */
+	align-items: center;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	padding: 10px 20px;
+
+	box-sizing: border-box; /* Includes padding in width calculation */
+
+}
+
+
+
+/* Container for left and right sections */
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+button{
+	font-family: 'Audiowide', sans-serif;
+}
+
+/* Container for left section (contact) */
+.footer-left {
+	flex: 1;
+	display: flex;
+	justify-content: flex-start; /* Align to the left */
+}
+
+/* Container for center section (rights reserved) */
+.footer-center {
+	flex: 1;
+	text-align: center; /* Center text */
+}
+
+/* Container for right section (buttons) */
+.footer-right {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end; /* Align to the right */
+	gap: 10px; /* Space between buttons */
+}
+
+/* Style for buttons */
+.footerButton {
+	background: none;
+	border: none;
+	color: #007bff; /* Default text color */
+	font-size: 1rem;
+	cursor: pointer;
+	text-decoration: none; /* Remove underline */
+}
+
+.footerButton:hover {
+	color: #0056b3; /* Highlight color on hover */
+}
+
+/* Hide logout button */
+.footerButton.invisible {
+	color: transparent; /* Make text invisible */
+}

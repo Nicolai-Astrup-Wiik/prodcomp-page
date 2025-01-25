@@ -1,0 +1,55 @@
+.LoginFormContainer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start; /* Correct alignment */
+	height: auto;
+	padding: 20px; /* Optional: Adds padding around the form */
+}
+
+.LoginForm {
+	display: flex;
+	flex-direction: column;
+	width: 400px; /* Adjust based on design needs */
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(5px);
+}
+
+.InputWrapper {
+	position: relative;
+	margin-bottom: 30px; /* Ensure space for error message */
+}
+
+.LoginForm input {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: rgba(67, 64, 64, 0.8); /* Semi-transparent input field background */
+	box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.LoginForm button {
+	padding: 15px;
+	background-color: #007bff;
+	color: darkslategray;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.LoginForm button:hover {
+	background-color: #0056b3;
+}
+
+.Error {
+	color: red;
+	font-size: 0.875rem;
+	position: absolute; /* Position absolute to keep error message within the InputWrapper */
+	bottom: -30px; /* Position error message below input field */
+	left: 0;
+	width: 100%;
+}
