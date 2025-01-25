@@ -1,0 +1,140 @@
+
+@import '../styles/variables.css';
+
+/* Navigation Styling */
+h1 {
+	margin: 0; /* Remove default margin */
+	padding: 0; /* Ensure no padding */
+ }
+
+ h2 {
+	margin-top: var(--spacing-negative);
+	font-family: var(--primary-font);
+ }
+
+nav {
+	font-family: var(--primary-font);
+	display: flex;
+	align-items: center; /* Center items vertically */
+	gap: 5rem;
+	justify-content: center;
+	color: var(--secondary-color);
+}
+
+nav button {
+	font-family: var(--primary-font);
+	background: none;
+	border: none;
+	color:var(--secondary-color);
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+
+nav button:hover, 
+nav a:hover {
+	color: var(--highlight-color);
+	text-decoration: underline; /* Optional underline on hover */
+	transform: scale(1.1); /* Slightly increase size on hover */
+	transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+nav a {
+	color: var(--secondary-color); /* Default link color */
+	text-decoration: none; /* Remove underline */
+	font-size: 1rem;
+	padding: 0;
+	transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+nav a:hover {
+	color: orange; /* Highlight color on hover */
+	text-decoration: underline; /* Optional underline on hover */
+	transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Modal Overlay */
+.ReactModal__Overlay {
+	background: rgba(0, 0, 0, 0.7) !important; /* Ensure dark semi-transparent background */
+	backdrop-filter: blur(8px) !important; /* Ensure background blur */
+	position: fixed !important; /* Ensure position is fixed */
+	inset: 0 !important; /* Ensure full coverage */
+	z-index: 1000;
+	
+ }
+/* Modal Content */
+.modalContent {
+	/*font-family: 'Audiowide', sans-serif;*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: darkslategrey;
+	padding: 30px;
+	border-radius: 8px;
+	width: 80%;
+	max-width: 800px;
+	color: #333;
+	font-size: 1.25rem;
+	text-align: center; /* Center text inside the modal */
+	z-index: 1010; /* Ensure it is above the overlay */
+}
+
+/* Header inside modal */
+.modalContent h2 {
+	color: wheat;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+/* Style for list */
+.modalContent ul {
+	list-style: none; /* Remove list dots */
+	padding: 0; /* Remove default padding */
+	display: flex; /* Use flexbox to align items horizontally */
+	justify-content: center; /* Center items horizontally */
+	gap: 5rem; /* Space between items */
+	margin: 0; /* Remove default margin */
+}
+
+/* Style for list items */
+.modalContent li {
+	font-size: 1.25rem; /* Increase font size for list items */
+}
+
+/* Remove styling from links inside modal */
+.modalContent a {
+	font-family: 'Audiowide', sans-serif;
+	text-decoration: none; /* Remove underline from links */
+	color: wheat; /* Default text color */
+	font-size: 1.25rem; /* Increase font size */
+	transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color change effect */
+	display: inline-block; /* Ensure the link is treated as a block element for transform */
+ }
+ 
+ .modalContent a:hover {
+	color: orange; /* Highlight color on hover */
+	transform: scale(1.2); /* Slightly increase size on hover */
+ }
+
+/* Remove styling from buttons inside modal */
+.modalCloseButton {
+	position: absolute; /* Position absolutely within the modalContent */
+	top: 10px; /* Adjust top margin */
+	right: 10px; /* Adjust right margin */
+	background: none;
+	border: none;
+	color: wheat; /* Default text color */
+	font-size: 2rem; /* Size of the "X" */
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+	transition: color 0.3s ease; /* Smooth color transition on hover */
+ }
+
+ .modalCloseButton:hover {
+	color: darkred; /* Highlight color on hover */
+ }
+ 

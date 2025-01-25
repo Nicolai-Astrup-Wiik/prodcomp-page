@@ -1,0 +1,53 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	
+}
+
+.AddForm {
+	display: flex;
+	flex-direction: column;
+	width: 400px; /* Adjust as needed */
+	padding: 20px;
+	background:white; /* Semi-transparent background */
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(5px);
+}
+
+.InputWrapper {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.AddForm select,
+.AddForm input {
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	background-color: rgba(67, 64, 64, 0.8);
+	box-sizing: border-box;
+	color: #fff; /* Text color for inputs */
+}
+
+.ButtonWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.AddForm button {
+	padding: 15px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.AddForm button:hover {
+	background-color: #0056b3;
+}
