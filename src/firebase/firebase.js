@@ -16,12 +16,12 @@ import {
 import { useState, useEffect } from "react";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDb07o_XesGtD4_oBH9-v3W4qByZDPI5V4",
-  authDomain: "prodcomp-page.firebaseapp.com",
-  projectId: "prodcomp-page",
-  storageBucket: "prodcomp-page.appspot.com",
-  messagingSenderId: "603300462654",
-  appId: "1:603300462654:web:ffaf6ce16f68d4afd7516f",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
   measurementId: "G-TR3KCV3TFE",
 };
 
