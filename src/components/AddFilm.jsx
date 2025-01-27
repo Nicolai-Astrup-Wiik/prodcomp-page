@@ -131,22 +131,23 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { addFilm } from '../firebase/firebase';
-import styles from '../styles/AddFilm.module.css';
+import { addFilm } from '../firebase/firebase'; // Ensure you have this function
+import styles from '../styles/AddFilm.module.css'; // Ensure this CSS module exists
 
 export const AddFilm = () => {
 	const [filmValues, setFilmValues] = useState({
 		title: '',
-		director: '',
+		director: '', // Default is an empty string
 		client: '',
 		url: '',
 		date: '',
-		featured: false,
+		featured: false, // Add the featured boolean
 	});
 	const [selectedFile, setSelectedFile] = useState(null);
 	const [errors, setErrors] = useState({});
 	const navigate = useNavigate();
 
+	// Handle input changes
 	const handleInputChange = (e) => {
 		const { name, value, type, checked } = e.target;
 		setFilmValues((prev) => ({
@@ -155,18 +156,28 @@ export const AddFilm = () => {
 		}));
 	};
 
+	// Extract the src URL from the embed code
+	function extractIframeSrc(embedCode) {
+		// Use a regular expression to extract the src attribute from an iframe tag
+		const srcPattern = /<iframe[^>]+src=["']([^"']+)["']/i;
+		const match = embedCode.match(srcPattern);
+		return match ? match[1] : null;
+	}
+
+	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// Custom validation logic
+		// Validate fields
 		const newErrors = {};
 		if (!filmValues.title.trim()) newErrors.title = 'Title is required.';
-		if (!filmValues.director.trim()) newErrors.director = 'Please select a director.';
+		if (!filmValues.director || filmValues.director === 'default')
+			newErrors.director = 'Please select a director.';
 		if (!filmValues.client.trim()) newErrors.client = 'Client is required.';
 		if (!filmValues.url.trim()) newErrors.url = 'URL is required.';
 		if (!filmValues.date.trim()) newErrors.date = 'Date is required.';
 
-		// If errors exist, set them and prevent submission
+		// If there are errors, set them and return early
 		if (Object.keys(newErrors).length > 0) {
 			setErrors(newErrors);
 			return;
@@ -175,9 +186,13 @@ export const AddFilm = () => {
 		// Clear errors
 		setErrors({});
 
+		// Extract the iframe src URL if URL is an embed code
+		const extractedUrl = extractIframeSrc(filmValues.url) || filmValues.url;
+
 		// Prepare film data
 		const filmData = {
 			...filmValues,
+			url: extractedUrl,
 			filename: selectedFile ? selectedFile.name : '',
 		};
 
@@ -187,7 +202,7 @@ export const AddFilm = () => {
 		// Reset form
 		setFilmValues({
 			title: '',
-			director: '',
+			director: '', // Reset to default
 			client: '',
 			url: '',
 			date: '',
@@ -201,7 +216,7 @@ export const AddFilm = () => {
 	return (
 		<div className={styles.container}>
 			<form className={styles.AddForm} onSubmit={handleSubmit}>
-				{/* Title */}
+				{/* Title Field */}
 				<div className={styles.InputWrapper}>
 					<input
 						type="text"
@@ -211,21 +226,18 @@ export const AddFilm = () => {
 						placeholder="Title"
 					/>
 					<div className={styles.ErrorContainer}>
-						{errors.title && <span>{errors.title}</span>}
+						{errors.title && <p>{errors.title}</p>}
 					</div>
 				</div>
 
-				{/* Director Dropdown */}
+				{/* Director Field */}
 				<div className={styles.InputWrapper}>
 					<select
 						name="director"
 						onChange={handleInputChange}
 						value={filmValues.director}
-						className={styles.SelectDropdown}
 					>
-						<option value="" disabled>
-							Velg regissør
-						</option>
+						<option value="default">Velg regissør</option>
 						<option value="gaute">Gaute</option>
 						<option value="nico">Nico</option>
 						<option value="sigve">Sigve</option>
@@ -234,11 +246,11 @@ export const AddFilm = () => {
 						<option value="mauritz">Mauritz</option>
 					</select>
 					<div className={styles.ErrorContainer}>
-						{errors.director && <span>{errors.director}</span>}
+						{errors.director && <p>{errors.director}</p>}
 					</div>
 				</div>
 
-				{/* Client */}
+				{/* Client Field */}
 				<div className={styles.InputWrapper}>
 					<input
 						type="text"
@@ -248,11 +260,11 @@ export const AddFilm = () => {
 						placeholder="Client"
 					/>
 					<div className={styles.ErrorContainer}>
-						{errors.client && <span>{errors.client}</span>}
+						{errors.client && <p>{errors.client}</p>}
 					</div>
 				</div>
 
-				{/* URL */}
+				{/* URL Field */}
 				<div className={styles.InputWrapper}>
 					<input
 						type="text"
@@ -262,11 +274,11 @@ export const AddFilm = () => {
 						placeholder="URL"
 					/>
 					<div className={styles.ErrorContainer}>
-						{errors.url && <span>{errors.url}</span>}
+						{errors.url && <p>{errors.url}</p>}
 					</div>
 				</div>
 
-				{/* Date */}
+				{/* Date Field */}
 				<div className={styles.InputWrapper}>
 					<input
 						type="date"
@@ -275,7 +287,7 @@ export const AddFilm = () => {
 						onChange={handleInputChange}
 					/>
 					<div className={styles.ErrorContainer}>
-						{errors.date && <span>{errors.date}</span>}
+						{errors.date && <p>{errors.date}</p>}
 					</div>
 				</div>
 
