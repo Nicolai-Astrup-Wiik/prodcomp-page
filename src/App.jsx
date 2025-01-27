@@ -25,6 +25,8 @@ function App() {
         <Route path="/directors/gaute-hesthagen" element={<FilmList director="gaute" />} />
         <Route path="/directors/sigve-aspelund" element={<FilmList director="sigve" />} />
         <Route path="/directors/alexander-halvorsen" element={<FilmList director="alexander" />} />
+        <Route path="/directors/oskar-johansen" element={<FilmList director="oskar" />} />
+        <Route path="/directors/mauritz-brekke-solberg" element={<FilmList director="mauritz" />} />
         <Route path="/login" element={<Login onLoginSuccess={setUser} />} />
         <Route path="/addfilm" element={<AddFilm />} />
       </Routes>

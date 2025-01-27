@@ -90,6 +90,8 @@ export const AddFilm = () => {
 					<option value="nico">Nico</option>
 					<option value="sigve">Sigve</option>
 					<option value="alexander">Alexander</option>
+					<option value="oskar">Oskar</option>
+					<option value="mauritz">Mauritz</option>
 				</select>
 
 				<input
