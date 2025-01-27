@@ -2,14 +2,37 @@
 @import '../styles/variables.css';
 
 /* Navigation Styling */
-h1 {
-	margin: 0; /* Remove default margin */
-	padding: 0; /* Ensure no padding */
+/* Add a container for the SVG */
+.svg-container {
+	display: flex; /* Use flexbox for centering */
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+	height: 100vh; /* Optional: Full viewport height */
+	width: 100%; /* Full width */
+	position: relative; /* Ensure it doesn't interfere with other elements */
+}
+
+/* Ensure the SVG scales responsively */
+.svg-container svg {
+	max-width: 100%; /* Ensure it doesn’t overflow */
+	max-height: 100%; /* Maintain proper scaling */
+	width: auto; /* Adjust width dynamically */
+	height: auto; /* Adjust height dynamically */
+}
+ svg {
+	cursor: pointer;
+	transition: transform 0.3s ease, fill 0.3s ease; /* Smooth hover effect */
+	transform-origin: center; /* Ensure scaling happens from the center */
+ }
+ 
+ svg:hover {
+	fill: var(--title-color); /* Change color on hover */
+	transform: scale(1.1); /* Scale without moving */
  }
 
  h2 {
 	margin-top: var(--spacing-negative);
-	font-family: var(--primary-font);
+	font-family: var(--secondary-font);
  }
 
 nav {
@@ -66,58 +89,57 @@ nav a:hover {
  }
 /* Modal Content */
 .modalContent {
-	/*font-family: 'Audiowide', sans-serif;*/
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: darkslategrey;
-	padding: 30px;
+	background: var(--primary-color);
+	padding: 75px;
 	border-radius: 8px;
-	width: 80%;
-	max-width: 800px;
+	width: auto; /* Adjust width dynamically */
+	max-width: 800px; /* Optional max width */
+	height: auto; /* Allow height to grow */
+	max-height: 90vh; /* Prevent overflow */
+	overflow-y: auto; /* Enable scrollbars for overflow */
 	color: #333;
 	font-size: 1.25rem;
-	text-align: center; /* Center text inside the modal */
-	z-index: 1010; /* Ensure it is above the overlay */
+	text-align: center;
+	z-index: 1010;
 }
 
-/* Header inside modal */
-.modalContent h2 {
-	color: wheat;
-	font-size: 2rem;
-	margin-bottom: 20px;
-}
-
-/* Style for list */
+/* Style the unordered list inside modal */
 .modalContent ul {
 	list-style: none; /* Remove list dots */
 	padding: 0; /* Remove default padding */
-	display: flex; /* Use flexbox to align items horizontally */
-	justify-content: center; /* Center items horizontally */
-	gap: 5rem; /* Space between items */
 	margin: 0; /* Remove default margin */
+	display: flex;
+	flex-direction: column; /* Arrange items in a column */
+	justify-content: flex-start; /* Align items at the top */
+	align-items: center; /* Center items horizontally */
+	gap: 1rem; /* Add spacing between items */
 }
 
 /* Style for list items */
 .modalContent li {
-	font-size: 1.25rem; /* Increase font size for list items */
+	font-size: 1.25rem; /* Increase font size */
+	width: 100%; /* Ensure full width of modal */
+	text-align: center; /* Center-align text */
 }
 
-/* Remove styling from links inside modal */
+/* Styling links inside modal list */
 .modalContent a {
-	font-family: 'Audiowide', sans-serif;
-	text-decoration: none; /* Remove underline from links */
-	color: wheat; /* Default text color */
-	font-size: 1.25rem; /* Increase font size */
-	transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color change effect */
-	display: inline-block; /* Ensure the link is treated as a block element for transform */
- }
- 
- .modalContent a:hover {
-	color: orange; /* Highlight color on hover */
-	transform: scale(1.2); /* Slightly increase size on hover */
- }
+	font-family: var(--primary-font);
+	text-decoration: none;
+	color: var(--secondary-color);
+	font-size: 1.25rem;
+	transition: transform 0.3s ease, color 0.3s ease;
+	display: inline-block;
+}
+
+.modalContent a:hover {
+	color: orange;
+	transform: scale(1.2);
+}
 
 /* Remove styling from buttons inside modal */
 .modalCloseButton {
@@ -126,7 +148,7 @@ nav a:hover {
 	right: 10px; /* Adjust right margin */
 	background: none;
 	border: none;
-	color: wheat; /* Default text color */
+	color: var(--highlight-color); /* Default text color */
 	font-size: 2rem; /* Size of the "X" */
 	cursor: pointer;
 	padding: 0;

@@ -2,6 +2,11 @@ import React from 'react'
 
 export const AboutPage = () => {
 	return (
-		<div>Pappenheimer er et nytt dynamisk selskap som bla bla bla bla. Ta kontakt med produsent (og jagerflypilot) Ivan Jamne for forespørseler</div>
+		<>
+			<p>
+				Hvis du lurer på hva vi driver med eller om du vil drive med oss, ta kontakt med <a href="mailto:ivan@pappenheimer.no">Ivan</a> eller dra innom Skyskraper og spør etter oss...
+			</p>
+		</>
+
 	)
 }

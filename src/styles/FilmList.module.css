@@ -32,7 +32,7 @@
 	transform: translateX(-50%); /* Center horizontally */
 	width: auto; /* Adjust width to fit content */
 	padding: 10px;
-	color: wheat;
+	color:var(--title-color);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	text-align: center;

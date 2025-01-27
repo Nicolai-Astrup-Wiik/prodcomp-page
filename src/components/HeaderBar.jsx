@@ -22,14 +22,15 @@ export const HeaderBar = () => {
 
   return (
     <>
-      <h1>
+      {/* SVG as a Link to the home page */}
+      <Link to="/" className="link-container" style={{ textDecoration: "none" }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 400 150"
           width="400"
           height="150"
+          style={{ cursor: "pointer" }}
         >
-          {/* Text elements using Poppins font */}
           <text
             x="50%"
             y="50"
@@ -54,12 +55,12 @@ export const HeaderBar = () => {
             PAPPENHEIMER
           </text>
         </svg>
-      </h1>
+      </Link>
       <h2>mustering new website soon...</h2>
       <nav>
         <button onClick={openModal}>Regissører</button>
         <Link to="/about">Om oss</Link>
-        <Link to="/work">Arbeid</Link>
+        {/*<Link to="/work">Arbeid</Link>*/}
         {user && ( // Check if the user is logged in
           <Link to="/addfilm" className={styles.addFilmButton}>
             Add Film
@@ -79,6 +80,7 @@ export const HeaderBar = () => {
           {/*<li><Link to="/directors/nicolai-astrup-wiik" onClick={closeModal}>Nicolai Astrup Wiik</Link></li>*/}
           <li><Link to="/directors/gaute-hesthagen" onClick={closeModal}>Gaute Hesthagen</Link></li>
           <li><Link to="/directors/sigve-aspelund" onClick={closeModal}>Sigve Aspelund</Link></li>
+          <li><Link to="/directors/alexander-halvorsen" onClick={closeModal}>Alexander Halvorsen</Link></li>
         </ul>
         <button className={styles.modalCloseButton} onClick={closeModal}>×</button>
       </Modal>

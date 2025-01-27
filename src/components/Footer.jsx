@@ -13,13 +13,13 @@ export const Footer = () => {
 
 	const handleLogoutClick = async () => {
 		await logout();
-		window.location.reload(); // Optional: Refresh the page after logout to reflect the changes
+		navigate('/login'); // Redirect to the login page
 	};
 
 	return (
 		<div className={styles.footer}>
-			<p>contact: ivan@pappenheimer.no</p>
-			<p>all rights reserved</p>
+			<a href="mailto:ivan@pappenheimer.no">contact</a>
+			{/*<p>all rights reserved</p>*/}
 
 			{!user && (
 				<button onClick={handleLoginClick} className={styles.footerButton}>

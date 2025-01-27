@@ -1,5 +1,6 @@
 /* Footer Container */
 .footer {
+	font-family: var(--secondary-font);
 	position: fixed;
 	display: flex;
 	justify-content: space-between; /* Space between left and right items */
@@ -7,13 +8,21 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: white;
+	background-color: var(--primary-color);
+
 	padding: 10px 20px;
 
 	box-sizing: border-box; /* Includes padding in width calculation */
 
+
 }
 
+a{
+	color: var(--secondary-color);
+}
+a:hover{
+	color: var(--highlight-color);
+}
 
 
 /* Container for left and right sections */
@@ -23,7 +32,7 @@
 	width: 100%;
 }
 button{
-	font-family: 'Audiowide', sans-serif;
+	
 }
 
 /* Container for left section (contact) */
@@ -49,16 +58,17 @@ button{
 
 /* Style for buttons */
 .footerButton {
+	font-family: var(--secondary-font);
 	background: none;
 	border: none;
-	color: #007bff; /* Default text color */
+	color: var(--secondary-color);
 	font-size: 1rem;
 	cursor: pointer;
 	text-decoration: none; /* Remove underline */
 }
 
 .footerButton:hover {
-	color: #0056b3; /* Highlight color on hover */
+	color: var(--highlight-color); /* Highlight color on hover */
 }
 
 /* Hide logout button */
