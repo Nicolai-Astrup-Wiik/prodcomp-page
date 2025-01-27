@@ -23,13 +23,12 @@ export const HeaderBar = () => {
   return (
     <>
       {/* SVG as a Link to the home page */}
-      <Link to="/" className="link-container" style={{ textDecoration: "none" }}>
+      <Link to="/" className="link-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 400 150"
           width="400"
           height="150"
-          style={{ cursor: "pointer" }}
         >
           <text
             x="50%"
@@ -55,7 +54,9 @@ export const HeaderBar = () => {
             PAPPENHEIMER
           </text>
         </svg>
-      </Link>
+
+
+      </Link >
       <h2>mustering new website soon...</h2>
       <nav>
         <button onClick={openModal}>Regissører</button>

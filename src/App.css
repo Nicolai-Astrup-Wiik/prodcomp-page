@@ -1,10 +1,11 @@
 @import './styles/variables.css';
 #root {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
-  /*font-family: 'Audiowide', sans-serif;*/
-  font-family: 'Avenir', narrow ;
+  min-height: 100vh; /* Ensure full viewport height */
+  text-align: center; /* Center text content inside flex children */
+
  
 }
 
@@ -14,3 +15,11 @@ body{
 }
 
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height is available */
+  width: 100%; /* Ensure full width is available */
+  box-sizing: border-box; /* Consistent box model */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
