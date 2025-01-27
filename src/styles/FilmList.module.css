@@ -5,9 +5,10 @@
 	grid-template-columns: repeat(3, 1fr); /* Three columns */
 	gap: 20px;
 	padding: 20px;
+	padding-bottom: 70px; /* Add bottom padding to avoid overlap with footer */
 	width: 100%; /* Full viewport width */
 	box-sizing: border-box; /* Includes padding in width calculation */
- }
+}
  
  .videoCard {
 	position: relative;

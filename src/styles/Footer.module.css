@@ -9,12 +9,9 @@
 	left: 0;
 	width: 100%;
 	background-color: var(--primary-color);
-
+	height: 50px; /* Define a consistent height */
 	padding: 10px 20px;
-
 	box-sizing: border-box; /* Includes padding in width calculation */
-
-
 }
 
 a{
