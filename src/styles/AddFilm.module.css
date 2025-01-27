@@ -1,44 +1,74 @@
+/* Form Container */
 .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	
 }
 
+/* Form Styles */
 .AddForm {
 	display: flex;
 	flex-direction: column;
-	width: 400px; /* Adjust as needed */
+	width: 400px;
 	padding: 20px;
-	background:white; /* Semi-transparent background */
+	background: white;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(5px);
 }
 
+/* Input Wrapper */
 .InputWrapper {
 	position: relative;
 	margin-bottom: 20px;
 }
 
-.AddForm select,
-.AddForm input {
+/* Input and Select Styles */
+.AddForm input,
+.AddForm select {
 	width: 100%;
 	padding: 15px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	background-color: rgba(67, 64, 64, 0.8);
+	color: #fff;
 	box-sizing: border-box;
-	color: #fff; /* Text color for inputs */
 }
 
+/* Placeholder Styling for Inputs */
+.AddForm input::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+	font-style: italic;
+}
+
+/* Styling for Dropdown Placeholder */
+.AddForm select:invalid {
+	color: rgba(255, 255, 255, 0.7);
+	font-style: italic;
+}
+
+/* Ensure valid options are styled normally */
+.AddForm select option {
+	color: rgba(255, 255, 255, 1);
+	font-style: normal;
+}
+
+/* Error Container for Messages */
+.ErrorContainer {
+	height: 1.5rem;
+	margin-top: 5px;
+	font-size: 0.875rem;
+	color: red;
+}
+
+/* Button Wrapper */
 .ButtonWrapper {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .AddForm button {
+	width: 100%;
 	padding: 15px;
 	background-color: #007bff;
 	color: #fff;
