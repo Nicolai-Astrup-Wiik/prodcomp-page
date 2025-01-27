@@ -1,3 +1,5 @@
+
+
 .listItemsContainer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr); /* Three columns */
@@ -33,6 +35,8 @@
 	width: auto; /* Adjust width to fit content */
 	padding: 10px;
 	color:var(--title-color);
+	font-family: var(--primary-font);
+	font-weight: 600;
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	text-align: center;
@@ -41,6 +45,7 @@
  
  .videoCard:hover .overlay {
 	opacity: 1; /* Show overlay on hover */
+	
  }
  
  /* Medium screens (Tablets) */
