@@ -81,8 +81,8 @@ export const HeaderBar = () => {
           {/*<li><Link to="/directors/nicolai-astrup-wiik" onClick={closeModal}>Nicolai Astrup Wiik</Link></li>*/}
           <li><Link to="/directors/gaute-hesthagen" onClick={closeModal}>Gaute Hesthagen</Link></li>
           <li><Link to="/directors/sigve-aspelund" onClick={closeModal}>Sigve Aspelund</Link></li>
-          <li><Link to="/directors/mauritz-brekke-solberg" onClick={closeModal}>Mauritz Brekke Solberg</Link></li>
-          <li><Link to="/directors/oskar-johansen" onClick={closeModal}>Oskar Johansen</Link></li>
+          {/*<li><Link to="/directors/mauritz-brekke-solberg" onClick={closeModal}>Mauritz Brekke Solberg</Link></li>
+          <li><Link to="/directors/oskar-johansen" onClick={closeModal}>Oskar Johansen</Link></li>*/}
           {/*<li><Link to="/directors/alexander-halvorsen" onClick={closeModal}>Alexander Halvorsen</Link></li>*/}
         </ul>
         <button className={styles.modalCloseButton} onClick={closeModal}>×</button>
