@@ -59,7 +59,8 @@ export const HeaderBar = () => {
       </Link >
       <h2>mustering new website soon...</h2>
       <nav>
-        <button onClick={openModal}>Regissører</button>
+        {/*<button onClick={openModal}>Regissører</button>*/}
+        <Link to="/directors" className={styles.navButton}>Regissører</Link>
         <Link to="/about">Om oss</Link>
         {/*<Link to="/work">Arbeid</Link>*/}
         {user && ( // Check if the user is logged in

@@ -8,6 +8,7 @@ import { FilmList } from './components/FilmList'; // Import the FilmList compone
 import { Footer } from './components/Footer';
 import { Login } from './components/Login';
 import { AddFilm } from './components/AddFilm'
+import { DirectorsPage } from './components/DirectorsPage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <HeaderBar />
       <Routes>
         {/* Default route can be set to FilmList or another page */}
+        <Route path="/directors" element={<DirectorsPage />} />
         <Route path="/" element={<FilmList featuredOnly={true} director={undefined} isModalOpen={undefined} />} />
         <Route path="/about" element={<AboutPage />} />
         {/*<Route path="/work" element={<WorkPage />} />*/}
