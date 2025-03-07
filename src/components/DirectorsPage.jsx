@@ -7,7 +7,7 @@ export const DirectorsPage = () => {
 	const directors = [
 		{ name: 'Gaute Hesthagen', slug: 'gaute' },
 		{ name: 'Sigve Aspelund', slug: 'sigve' },
-		//{ name: 'Alexander Halvorsen', slug: 'alexander' },
+		{ name: 'Alexander Halvorsen', slug: 'alexander' },
 		//{ name: 'Oskar Johansen', slug: 'oskar' },
 		//{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' }
 	];

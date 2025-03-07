@@ -5,26 +5,23 @@
 /* Add a container for the SVG */
 .svg-container {
 	display: flex;
-	justify-content: center; /* Horizontally center */
-	align-items: center; /* Vertically center */
-	height: 100vh; /* Full height of the viewport */
-	width: 100%; /* Full width of the screen */
-	position: relative; /* Prevent layout interference */
-	margin: 0; /* Remove any unintended margins */
-	padding: 0; /* Remove any unintended padding */
-	box-sizing: border-box; /* Ensure padding doesn't affect width/height */
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	max-height: 150px;  /* Prevents oversized scaling */
+	overflow: visible;   /* Ensures it does not cut off */
 }
+
 
 
 /* Ensure the SVG scales responsively */
 .svg-container svg {
-	display: block; /* Remove inline spacing (common with SVGs) */
-	margin: 0 auto; /* Ensure it’s centered if the block behavior applies */
-	max-width: 100%; /* Prevent it from overflowing */
-	max-height: 100%; /* Maintain aspect ratio */
-	width: auto; /* Dynamically adjust width */
-	height: auto; /* Dynamically adjust height */
-	transform-origin: center; /* Ensure transformations originate from the center */
+	display: block;
+	width: 300px;  /* Ensures consistent size */
+	height: auto;
+	max-width: 100%;
+	max-height: 150px;  /* Prevents it from being too big */
 }
  svg {
 	cursor: pointer;
