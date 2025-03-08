@@ -26,7 +26,6 @@
  /* Ensure page layout is consistent */
  .pageContainer {
 	display: flex;
-	height: 100vh; /* Use full viewport height */
 	align-items: flex-start;
 	position: relative;
  }
@@ -71,6 +70,7 @@
 	/*bottom: -3px; Space under the text*/
 	width: 100%;
 	height: 2px; /* Underline thickness */
+	bottom: 2px;
 	background-color: var(--highlight-color);
  }
  

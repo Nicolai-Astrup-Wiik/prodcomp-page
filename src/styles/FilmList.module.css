@@ -8,8 +8,24 @@
 	padding-bottom: 70px; /* Add bottom padding to avoid overlap with footer */
 	width: 100%; /* Full viewport width */
 	box-sizing: border-box; /* Includes padding in width calculation */
+	transition: width 0.5s ease-in-out;
 }
- 
+
+.listItemsContainerDirectors {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* Three columns */
+	gap: 20px;
+	padding: 20px;
+	padding-bottom: 70px; /* Add bottom padding to avoid overlap with footer */
+	width: 80%; /* Full viewport width */
+	box-sizing: border-box; /* Includes padding in width calculation */
+	transition: width 0.5s ease-in-out;
+}
+ .filmPageRow{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start; 
+ }
  .videoCard {
 	position: relative;
 	width: 100%; /* Ensures full width within the grid */
@@ -58,6 +74,7 @@
 	.overlay {
 	  font-size: 1rem; /* Adjust font size if needed */
 	}
+	
  }
  
  /* Small screens (Phones) */
@@ -70,6 +87,11 @@
 	  font-size: 0.9rem; /* Adjust font size if needed */
 	  padding: 8px; /* Reduce padding for smaller screens */
 	}
+	.filmPageRow{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start; 
+	 }
  }
 
  

@@ -5,7 +5,7 @@
 /* Add a container for the SVG */
 .svg-container {
 	display: flex;
-	justify-content: center;
+	justify-content: left;
 	align-items: center;
 	width: 100%;
 	height: auto;
@@ -13,16 +13,16 @@
 	overflow: visible;   /* Ensures it does not cut off */
 }
 
+.linkContainer{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
 
-
-/* Ensure the SVG scales responsively */
-.svg-container svg {
-	display: block;
-	width: 300px;  /* Ensures consistent size */
-	height: auto;
-	max-width: 100%;
-	max-height: 150px;  /* Prevents it from being too big */
 }
+
+
+
  svg {
 	cursor: pointer;
 	transition: transform 0.3s ease, fill 0.3s ease; /* Smooth hover effect */
@@ -30,7 +30,7 @@
  }
  
  svg:hover {
-	fill: var(--title-color); /* Change color on hover */
+	/*fill: var(--title-color); Change color on hover*/
 	transform: scale(1.1); /* Scale without moving */
  }
 
@@ -41,10 +41,11 @@
 
 nav {
 	font-family: var(--primary-font);
+	margin: var(--spacing-medium);
 	display: flex;
 	align-items: center; /* Center items vertically */
 	gap: 5rem;
-	justify-content: center;
+	justify-content: start;
 	color: var(--secondary-color);
 }
 
