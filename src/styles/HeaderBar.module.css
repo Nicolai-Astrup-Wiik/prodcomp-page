@@ -78,92 +78,14 @@ nav a {
 }
 
 nav a:hover {
-	color: orange; /* Highlight color on hover */
+	color: var(--highlight-color); /* Highlight color on hover */
 	text-decoration: underline; /* Optional underline on hover */
 	transform: scale(1.1); /* Slightly increase size on hover */
 }
 
-/* Modal Overlay */
-.ReactModal__Overlay {
-	background: rgba(0, 0, 0, 0.7) !important; /* Ensure dark semi-transparent background */
-	backdrop-filter: blur(8px) !important; /* Ensure background blur */
-	position: fixed !important; /* Ensure position is fixed */
-	inset: 0 !important; /* Ensure full coverage */
-	z-index: 1000;
-	
- }
-/* Modal Content */
-.modalContent {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: var(--primary-color);
-	padding: 75px;
-	border-radius: 8px;
-	width: auto; /* Adjust width dynamically */
-	max-width: 800px; /* Optional max width */
-	height: auto; /* Allow height to grow */
-	max-height: 90vh; /* Prevent overflow */
-	overflow-y: auto; /* Enable scrollbars for overflow */
-	color: #333;
-	font-size: 1.25rem;
-	text-align: center;
-	z-index: 1010;
+.navButtonActive{
+	color:var(--highlight-color);
 }
-
-/* Style the unordered list inside modal */
-.modalContent ul {
-	list-style: none; /* Remove list dots */
-	padding: 0; /* Remove default padding */
-	margin: 0; /* Remove default margin */
-	display: flex;
-	flex-direction: column; /* Arrange items in a column */
-	justify-content: flex-start; /* Align items at the top */
-	align-items: center; /* Center items horizontally */
-	gap: 1rem; /* Add spacing between items */
-}
-
-/* Style for list items */
-.modalContent li {
-	font-size: 1.25rem; /* Increase font size */
-	width: 100%; /* Ensure full width of modal */
-	text-align: center; /* Center-align text */
-}
-
-/* Styling links inside modal list */
-.modalContent a {
-	font-family: var(--primary-font);
-	text-decoration: none;
-	color: var(--secondary-color);
-	font-size: 1.25rem;
-	transition: transform 0.3s ease, color 0.3s ease;
-	display: inline-block;
-}
-
-.modalContent a:hover {
-	color: orange;
-	transform: scale(1.2);
-}
-
-/* Remove styling from buttons inside modal */
-.modalCloseButton {
-	position: absolute; /* Position absolutely within the modalContent */
-	top: 10px; /* Adjust top margin */
-	right: 10px; /* Adjust right margin */
-	background: none;
-	border: none;
-	color: var(--highlight-color); /* Default text color */
-	font-size: 2rem; /* Size of the "X" */
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
-	transition: color 0.3s ease; /* Smooth color transition on hover */
- }
-
- .modalCloseButton:hover {
-	color: darkred; /* Highlight color on hover */
- }
  
  @media (max-width: 768px) {
 	.svg-container {
@@ -174,4 +96,8 @@ nav a:hover {
 		width: 70%; /* Reduce size for smaller screens */
 		height: auto; /* Maintain aspect ratio */
 	}
+	svg:hover {
+		/*fill: var(--title-color); Change color on hover*/
+		transform: scale(1); /* Scale without moving */
+	 }
 }

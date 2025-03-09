@@ -144,7 +144,7 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 		<div className={styles.listItemsContainer}>
 			{filteredFilms.map((film, index) => (
 				<div
-					key={index}
+					key={film.url}
 					className={`${styles.videoCard} ${isModalOpen ? styles.disabled : ''}`}
 				>
 					<iframe

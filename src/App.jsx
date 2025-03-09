@@ -21,7 +21,7 @@ function App() {
       <Routes>
         {/* Default route can be set to FilmList or another page */}
         <Route path="/directors" element={<FilmPage featuredOnly={true} isModalOpen={undefined} />} />
-        <Route path="/directors/:director" element={<FilmPage featuredOnly={true} isModalOpen={undefined} />} />
+        <Route path="/directors/:director" element={<FilmPage featuredOnly={false} isModalOpen={undefined} />} />
         <Route path="/" element={<FilmPage featuredOnly={true} isModalOpen={undefined} />} />
         <Route path="/about" element={<AboutPage />} />
         {/*<Route path="/work" element={<WorkPage />} />*/}
