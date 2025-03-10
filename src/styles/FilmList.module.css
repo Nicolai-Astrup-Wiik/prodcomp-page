@@ -52,13 +52,14 @@
 	width: auto; /* Adjust width to fit content */
 	padding: 10px;
 	color:var(--highlight-color);
-	font-family: var(--primary-font);
+	font-family: var(--secondary-font);
 	font-weight: 600;
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	text-align: center;
 	z-index: 10; /* Ensure it appears above other content */
  }
+ 
 
  .videoCard:hover .overlay {
 	opacity: 1; /* Show overlay on hover */
@@ -84,11 +85,13 @@
 	}
  
 	.overlay {
+		font-family: var(--secondary-font);
 	  font-size: 0.9rem; /* Adjust font size if needed */
 	  padding: 8px; /* Reduce padding for smaller screens */
 	}
 
 	.videoCard:hover .overlay {
+		
 		opacity: 0; /* Show overlay on hover */
 		
 	 }

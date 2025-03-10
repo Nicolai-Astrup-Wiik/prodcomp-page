@@ -78,90 +78,69 @@
 //	);
 //};
 import React from 'react';
-import styles from '../styles/FilmList.module.css'; // Import the CSS module
-import { deleteFilm, getFilms, useAuth } from '../firebase/firebase'; // Import useAuth and Firebase functions
-import SlideInComponent from './slider';
+import ReactPlayer from 'react-player/vimeo';
+import styles from '../styles/FilmList.module.css';
+import { deleteFilm, getFilms, useAuth } from '../firebase/firebase';
 import { useLocation, useParams } from 'react-router-dom';
-import { DirectorsPage } from './DirectorsPage';
-import { AnimatePresence } from 'framer-motion';
 
 export const FilmList = ({ isModalOpen, featuredOnly }) => {
 	const [films, setFilms] = React.useState([]);
 	const [filteredFilms, setFilteredFilms] = React.useState([]);
-	const { director } = useParams()
-	const location = useLocation()
-	const showDirectors = location.pathname.includes("director")
-	const user = useAuth(); // Use the custom hook to get the current user
+	const [playingFilmId, setPlayingFilmId] = React.useState(null); // Track the playing film ID
+	const { director } = useParams();
+	const location = useLocation();
+	const showDirectors = location.pathname.includes('director');
+	const user = useAuth();
 
 	React.useEffect(() => {
-		// Fetch all films from Firebase
 		getFilms().then((fetchedFilms) => {
-			// Original sorting by date for all films
 			const sortedFilms = fetchedFilms
-				.filter((film) => film.date) // Ensure 'date' exists
-				.sort((a, b) => {
-					const dateA = new Date(a.date);
-					const dateB = new Date(b.date);
-					return dateB - dateA; // Sort in descending order (latest date first)
-				});
-
-			setFilms(sortedFilms); // Set the sorted films
+				.filter((film) => film.date)
+				.sort((a, b) => new Date(b.date) - new Date(a.date));
+			setFilms(sortedFilms);
 		});
 	}, []);
 
 	React.useEffect(() => {
-		let updatedFilms = director
-			? films.filter((film) => film.director === director)
-			: films;
-
+		let updatedFilms = director ? films.filter((film) => film.director === director) : films;
 		if (featuredOnly) {
-			// Randomize featured films for the homepage
 			updatedFilms = updatedFilms.filter((film) => film.featured).sort(() => Math.random() - 0.5);
-		} else if (director) {
-			// Sort by date when a director is selected
-			updatedFilms = updatedFilms.sort((a, b) => {
-				const dateA = new Date(a.date);
-				const dateB = new Date(b.date);
-				return dateB - dateA; // Sort in descending order by date
-			});
 		}
-
-		setFilteredFilms(updatedFilms); // Set the final filtered films
+		setFilteredFilms(updatedFilms);
 	}, [films, director, featuredOnly]);
 
 	const handleDelete = async (filmId) => {
 		try {
 			await deleteFilm(filmId);
-			// Update the state to remove the deleted film from the list
 			setFilms(films.filter((film) => film.id !== filmId));
 		} catch (error) {
 			console.error('Error deleting film: ', error);
 		}
 	};
 
-	return (
+	// Handle play event to show the progress bar
+	const handlePlay = (filmId) => {
+		setPlayingFilmId(filmId);
+	};
 
+	return (
 		<div className={styles.listItemsContainer}>
 			{filteredFilms.map((film) => (
-				<div
-					key={film.url}
-					className={`${styles.videoCard} ${isModalOpen ? styles.disabled : ''}`}
-				>
-					<iframe
-						src={film.url}
-						title={film.title}
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen
+				<div key={film.url} className={`${styles.videoCard} ${isModalOpen ? styles.disabled : ''}`}>
+					<ReactPlayer
+						url={film.url}
+						onPlay={() => handlePlay(film.id)}  // Trigger play event
+						playing={film.id === playingFilmId} // Only show progress bar if this film is playing
+						controls={true}  // Show controls (including progress bar)
+						width="100%"
+						height="100%"
 					/>
 					<div className={styles.overlay}>
 						{!isModalOpen && (
 							<>
 								<div className={styles.title}>{film.title}</div>
 								{user && (
-									<button
-										className={styles.deleteButton}
-										onClick={() => handleDelete(film.id)}
-									>
+									<button className={styles.deleteButton} onClick={() => handleDelete(film.id)}>
 										Delete
 									</button>
 								)}
