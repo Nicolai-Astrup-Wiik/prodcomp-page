@@ -21,6 +21,8 @@ export const Footer = () => {
 			<a href="mailto:ivan@pappenheimer.no">contact</a>
 			{/*<p>all rights reserved</p>*/}
 
+			<a href="callto:+47 407 18 976">+47 407 18 976</a>
+
 			{!user && (
 				<button onClick={handleLoginClick} className={styles.footerButton}>
 					Log in

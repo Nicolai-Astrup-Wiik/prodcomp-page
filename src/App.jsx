@@ -10,6 +10,7 @@ import { Login } from './components/Login';
 import { AddFilm } from './components/AddFilm'
 import { DirectorsPage } from './components/DirectorsPage'
 import { FilmPage } from './components/FilmPage';
+import ContactPage from './components/ContactPage';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/directors/:director" element={<FilmPage featuredOnly={false} isModalOpen={undefined} />} />
         <Route path="/" element={<FilmPage featuredOnly={true} isModalOpen={undefined} />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         {/*<Route path="/work" element={<WorkPage />} />*/}
         {/* <Route path="/directors/nicolai-astrup-wiik" element={<FilmList director="nico" />} />
         <Route path="/directors/gaute-hesthagen" element={<FilmList director="gaute" />} />

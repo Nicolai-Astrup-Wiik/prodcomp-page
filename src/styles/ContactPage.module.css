@@ -1,0 +1,30 @@
+
+
+
+
+.contactCardContainer{
+display: flex;
+margin: var(--spacing-medium);
+margin-top: 10% ;
+justify-content: space-around;
+align-items: start ;
+gap: var(--spacing-medium)
+}
+
+.contactCard{
+	display: flex;
+	flex-direction: column;
+	font-family: var(--primary-font);
+	gap: var(--spacing-small);
+	text-align: left;
+}
+
+.contactTitle{
+	font-size: larger;
+	margin-bottom: var(--spacing-medium)
+}
+
+
+@media (max-width: 768px) {
+	
+ }
