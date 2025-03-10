@@ -11,8 +11,8 @@
 :root {
 	/* Colors */
 	--primary-color: white; /* Background color */
-	--secondary-color: #000000; /* Text color (black) */
-	--highlight-color: orange; /* Highlight color */
+	--secondary-color: #222221;; /* Text color (black) */
+	--highlight-color: rgb(255, 204, 0); /* Highlight color */
 	--error-color: red; /* Delete/Error color */
 	--title-color: yellow;
 

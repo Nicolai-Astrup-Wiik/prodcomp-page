@@ -44,7 +44,7 @@ nav {
 	margin: var(--spacing-medium);
 	display: flex;
 	align-items: center; /* Center items vertically */
-	gap: 5rem;
+	gap: var(--spacing-medium);
 	justify-content: start;
 	color: var(--secondary-color);
 }

@@ -239,7 +239,7 @@ export const AddFilm = () => {
 					>
 						<option value="default">Velg regissør</option>
 						<option value="gaute">Gaute</option>
-						<option value="nico">Nico</option>
+						<option value="nico&links">Nico & Links</option>
 						<option value="sigve">Sigve</option>
 						<option value="alexander">Alexander</option>
 						<option value="oskar">Oskar</option>

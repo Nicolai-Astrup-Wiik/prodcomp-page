@@ -142,7 +142,7 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 	return (
 
 		<div className={styles.listItemsContainer}>
-			{filteredFilms.map((film, index) => (
+			{filteredFilms.map((film) => (
 				<div
 					key={film.url}
 					className={`${styles.videoCard} ${isModalOpen ? styles.disabled : ''}`}

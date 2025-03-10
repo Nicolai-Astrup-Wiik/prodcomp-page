@@ -1,3 +1,6 @@
 p {
 	font-family: var(--secondary-font);
+	margin: var(--spacing-large);
+	text-align: left;
+	
 }
