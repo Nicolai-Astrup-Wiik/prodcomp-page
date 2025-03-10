@@ -7,14 +7,14 @@ const ContactPage = () => {
 			<div className={styles.contactTitle}>Ivan Jamne</div>
 			<div>Produsent</div>
 			<div>+47 407 18 976</div>
-			<div>	ivan@pappenheimer.no</div>
+			<a href="mailto:ivan@pappenheimer.no">ivan@pappenheimer.no</a>
 		</div>
 
 		<div className={styles.contactCard}>
 			<div className={styles.contactTitle}>Beril Holte Rasmussen</div>
 			<div>Backoffice</div>
 			<div>+47 952 02 590</div>
-			<div>	beril@pappenheimer.no</div>
+			<a href="mailto:beril@pappenheimer.no">beril@pappenheimer.no</a>
 		</div>
 
 	</div>

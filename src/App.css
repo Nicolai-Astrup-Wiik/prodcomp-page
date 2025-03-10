@@ -6,12 +6,14 @@
   min-height: 100vh; /* Ensure full viewport height */
   text-align: center; /* Center text content inside flex children */
 
+
  
 }
 
 body{
   color: black;
   background-color: var(--primary-color);
+  min-width: 340px ;
 }
 
 

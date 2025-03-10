@@ -4,11 +4,12 @@
 
 .contactCardContainer{
 display: flex;
-margin: var(--spacing-medium);
-margin-top: 10% ;
-justify-content: space-around;
+flex-direction: column;
+margin: var(--spacing-large);
+margin-top: 10vh ;
+justify-content: left;
 align-items: start ;
-gap: var(--spacing-medium)
+gap: var(--spacing-xl)
 }
 
 .contactCard{
@@ -25,6 +26,10 @@ gap: var(--spacing-medium)
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 450px) {
+	.contactCardContainer{
+		flex-direction: column;
+		gap: var(--spacing-xl);
+	}
 	
  }

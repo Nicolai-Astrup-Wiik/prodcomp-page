@@ -18,10 +18,11 @@ export const Footer = () => {
 
 	return (
 		<div className={styles.footer}>
-			<a href="mailto:ivan@pappenheimer.no">contact</a>
-			{/*<p>all rights reserved</p>*/}
+			{/*<a href="mailto:ivan@pappenheimer.no">contact</a>*/}
+			<p>all rights reserved</p>
+			{/*<p>Maridalsveien 89</p>*/}
 
-			<a href="callto:+47 407 18 976">+47 407 18 976</a>
+			{/*<a href="callto:+47 407 18 976">+47 407 18 976</a>*/}
 
 			{!user && (
 				<button onClick={handleLoginClick} className={styles.footerButton}>
