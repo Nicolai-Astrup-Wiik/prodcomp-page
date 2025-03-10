@@ -98,7 +98,7 @@ export const FilmPage = ({ isModalOpen, featuredOnly }) => {
 				<DirectorsPage />
 			</SlideInComponent>}
 
-			<FilmList isModalOpen featuredOnly={featuredOnly} />
+			<FilmList isModalOpen={false} featuredOnly={featuredOnly} />
 		</div>
 	);
 };

@@ -60,6 +60,10 @@
 	z-index: 10; /* Ensure it appears above other content */
  }
  
+ .videoCard:hover .backdrop{
+	color: black;
+	opacity: 0.7;
+ }
  .videoCard:hover .overlay {
 	opacity: 1; /* Show overlay on hover */
 	
