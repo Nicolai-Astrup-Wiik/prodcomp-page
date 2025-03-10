@@ -59,11 +59,7 @@
 	text-align: center;
 	z-index: 10; /* Ensure it appears above other content */
  }
- 
- .videoCard:hover .backdrop{
-	color: black;
-	opacity: 0.7;
- }
+
  .videoCard:hover .overlay {
 	opacity: 1; /* Show overlay on hover */
 	
@@ -91,6 +87,11 @@
 	  font-size: 0.9rem; /* Adjust font size if needed */
 	  padding: 8px; /* Reduce padding for smaller screens */
 	}
+
+	.videoCard:hover .overlay {
+		opacity: 0; /* Show overlay on hover */
+		
+	 }
 	.filmPageRow{
 		display: flex;
 		flex-direction: column;
