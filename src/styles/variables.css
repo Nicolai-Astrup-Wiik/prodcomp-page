@@ -1,19 +1,30 @@
 
 @font-face {
-	font-family: 'SansSans';
-	src: url('/fonts/SansSans-140SemiBold.woff2') format('woff2'),
-		  url('/fonts/SansSans-140SemiBold.woff') format('woff');
+	font-family: 'SansNorm-regular';
+	src: url('/fonts/SansNorm-080Regular.woff2') format('woff2'),
+		  url('/fonts/SansNorm-080Regular.woff') format('woff');
 	font-weight: 600; /* SemiBold */
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'SansSans';
-	src: url('/fonts/SansSans-030ExtraLight.woff2') format('woff2'),
-		  url('/fonts/SansSans-030ExtraLight.woff') format('woff');
+	font-family: 'SansNorm-extra-light';
+	src: url('/fonts/SansNorm-030ExtraLight.woff2') format('woff2'),
+		  url('/fonts/SansNorm-030ExtraLight.woff') format('woff');
 	font-weight: 200; /* ExtraLight */
 	font-style: normal;
 }
+@font-face {
+	font-family: 'SansNorm-regular-italic';
+	src: url('/fonts/SansNorm-081RegularItalic.woff2') format('woff2'),
+		  url('/fonts/SansNorm-081RegularItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
+}
+
+
+
+
 
 
 :root {
@@ -25,8 +36,9 @@
 	--title-color: yellow;
 
 	/* Font types */
-	--primary-font: 'SansSans';
-	--secondary-font: 'SansSans' ;
+	--primary-font: 'SansNorm-extra-light';
+	--secondary-font: 'SansNorm-regular' ;
+	--italic: 'SansNorm-regular-italic'
 	/* Font Sizes */
 	--font-small: 0.875rem; /* Small text */
 	--font-medium: 1rem; /* Medium text */

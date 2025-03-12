@@ -40,7 +40,7 @@
  }
 
 nav {
-	font-family: var(--primary-font);
+	font-family: var(--secondary-font);
 	margin: var(--spacing-medium);
 	display: flex;
 	align-items: center; /* Center items vertically */
@@ -50,7 +50,7 @@ nav {
 }
 
 nav button {
-	font-family: var(--primary-font);
+	
 	background: none;
 	border: none;
 	color:var(--secondary-color);

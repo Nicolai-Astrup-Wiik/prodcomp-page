@@ -1,5 +1,6 @@
 /* Footer Container */
 .footer {
+	box-sizing: border-box; /* Includes padding in width calculation */
 	font-family: var(--secondary-font);
 	position: fixed;
 	display: flex;
@@ -7,12 +8,13 @@
 	align-items: center;
 	/*margin-left: var(--spacing-small);*/
 	bottom: 0;
-	left: 0;
+
+	
 	width: 100%;
 	background-color: var(--primary-color);
 	height: 50px; /* Define a consistent height */
-	/*padding: 10px 20px;*/
-	box-sizing: border-box; /* Includes padding in width calculation */
+	padding: 10px 20px;
+
 }
 
 /*a{

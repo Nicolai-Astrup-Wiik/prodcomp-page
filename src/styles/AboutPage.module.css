@@ -1,6 +1,19 @@
-p {
-	font-family: var(--secondary-font);
+.paragraph {
+	font-family: var(--primary-font);
+	font-size: medium;
 	margin: var(--spacing-large);
 	text-align: left;
 	
 }
+
+.paragraphItalic{
+	font-size: small;
+	font-style: italic;
+}
+
+.paragraphItalic h3{
+	font-family: var(--secondary-font);
+	font-size: small;
+	font-weight: bold;
+}
+
