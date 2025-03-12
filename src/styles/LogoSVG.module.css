@@ -1,13 +1,43 @@
 
+.logoContainer{
+	margin: var(--spacing-medium);
+}
+
+.pictureClass{
+	width: 600px;
+	height: 100px; /* ✅ Matches image height */
+	width: auto;
+	display: inline-block;
+}
 
 .logoClass{
-	width: 300px;
-margin: var(--spacing-medium);
+	width: 120%; /* 20% larger */
 
+	height: 150px; /* ✅ Matches image height */
+	width: auto;
+	display: inline-block;
 
 }
 
 .svgfill
 {fill:#222221;
+	width: 10%; /* 20% larger */
+	height: auto; /* maintain aspect ratio */
 
 }
+
+.logoContainer {
+	cursor: pointer;
+	transition: transform 0.3s ease, fill 0.3s ease; /* Smooth hover effect */
+	transform-origin: center; /* Ensure scaling happens from the center */
+ }
+ 
+ .logoContainer:hover {
+	/*fill: var(--title-color); Change color on hover*/
+	transform: scale(1.1); /* Scale without moving */
+ }
+
+
+
+
+

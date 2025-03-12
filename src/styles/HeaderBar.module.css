@@ -23,16 +23,7 @@
 
 
 
- svg {
-	cursor: pointer;
-	transition: transform 0.3s ease, fill 0.3s ease; /* Smooth hover effect */
-	transform-origin: center; /* Ensure scaling happens from the center */
- }
- 
- svg:hover {
-	/*fill: var(--title-color); Change color on hover*/
-	transform: scale(1.1); /* Scale without moving */
- }
+
 
  h2 {
 	margin-top: var(--spacing-negative);
