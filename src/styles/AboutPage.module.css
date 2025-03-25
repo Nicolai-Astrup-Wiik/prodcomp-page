@@ -3,17 +3,32 @@
 	font-size: medium;
 	margin: var(--spacing-large);
 	text-align: left;
-	
+	line-height: 1.6;
+}
+
+.linkButton{
+	text-decoration: none;
+	color: inherit;
+	display: inline-block; /* 👈 Add this line */
+	transition: transform 0.2s ease;
+	padding-right: 2px;
+}
+
+.linkButton:hover{
+	transform: scale(1.05);
+
 }
 
 .paragraphItalic{
 	font-size: small;
 	font-style: italic;
+	margin-bottom: var(--spacing-xl);
 }
 
 .paragraphItalic h3{
 	font-family: var(--secondary-font);
 	font-size: small;
 	font-weight: bold;
+	
 }
 

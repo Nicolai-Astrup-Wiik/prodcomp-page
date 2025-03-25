@@ -5,12 +5,18 @@
 /* Add a container for the SVG */
 .svg-container {
 	display: flex;
+	flex-wrap: nowrap;
 	justify-content: left;
 	align-items: center;
 	width: 100%;
 	height: auto;
 	max-height: 150px;  /* Prevents oversized scaling */
 	overflow: visible;   /* Ensures it does not cut off */
+}
+
+.svg-container > * {
+	flex-shrink: 1; /* 👈 Allow children to shrink */
+	min-width: 0;   /* Avoid default min width that may force wrapping */
 }
 
 .linkContainer{
