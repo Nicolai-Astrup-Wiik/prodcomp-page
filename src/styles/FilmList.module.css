@@ -1,105 +1,103 @@
-
-
 .listItemsContainer {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr); /* Three columns */
 	gap: 20px;
 	padding: 20px;
-	padding-bottom: 70px; /* Add bottom padding to avoid overlap with footer */
-	width: 100%; /* Full viewport width */
-	box-sizing: border-box; /* Includes padding in width calculation */
+	padding-bottom: 70px;
+	width: 100%;
+	box-sizing: border-box;
 	transition: width 0.5s ease-in-out;
 }
 
 .listItemsContainerDirectors {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* Three columns */
+	grid-template-columns: repeat(2, 1fr); /* Two columns for director view */
 	gap: 20px;
 	padding: 20px;
-	padding-bottom: 70px; /* Add bottom padding to avoid overlap with footer */
-	width: 80%; /* Full viewport width */
-	box-sizing: border-box; /* Includes padding in width calculation */
+	padding-bottom: 70px;
+	width: 80%;
+	box-sizing: border-box;
 	transition: width 0.5s ease-in-out;
 }
- .filmPageRow{
+
+.filmPageRow {
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start; 
- }
- .videoCard {
+	align-items: flex-start;
+}
+
+.videoCard {
 	position: relative;
-	width: 100%; /* Ensures full width within the grid */
-	padding-bottom: 56.25%; /* 16:9 aspect ratio */
-	margin: 0; /* Remove margin to ensure proper sizing */
-	background: black; /* Black background to cover extra space */
-	overflow: hidden; /* Hide overflow */
- }
- 
- .videoCard iframe {
-	position: absolute; /* Covers the entire area */
+	width: 100%;
+	padding-bottom: 56.25%;
+	margin: 0;
+	background: black;
+	overflow: hidden;
+}
+
+.videoCard iframe {
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	border: none;
-	object-fit: cover; /* Ensure the iframe covers the container */
- }
- .overlay {
+	object-fit: cover;
+}
+
+.overlay {
 	position: absolute;
-	top: 0; /* Adjust to position at the top if needed */
+	top: 0;
 	left: 50%;
-	transform: translateX(-50%); /* Center horizontally */
-	width: auto; /* Adjust width to fit content */
+	transform: translateX(-50%);
+	width: auto;
 	padding: 10px;
-	color:var(--highlight-color);
+	color: var(--highlight-color);
 	font-family: var(--secondary-font);
+	font-size: x-large;
 	font-weight: 600;
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	text-align: center;
-	z-index: 10; /* Ensure it appears above other content */
- }
- 
+	z-index: 10;
+}
 
- .videoCard:hover .overlay {
-	opacity: 1; /* Show overlay on hover */
-	
- }
- 
- /* Medium screens (Tablets) */
+.videoCard:hover .overlay {
+	opacity: 1;
+}
+
+/* Medium screens (Tablets) */
 @media (max-width: 1024px) {
-	.listItemsContainer {
-	  grid-template-columns: repeat(2, 1fr); /* Two columns */
+	.listItemsContainer,
+	.listItemsContainerDirectors {
+		grid-template-columns: repeat(2, 1fr);
 	}
- 
+
 	.overlay {
-	  font-size: 1rem; /* Adjust font size if needed */
+		font-size: 1rem;
 	}
-	
- }
- 
- /* Small screens (Phones) */
- @media (max-width: 768px) {
-	.listItemsContainer {
-	  grid-template-columns: 1fr; /* Single column */
+}
+
+/* Small screens (Phones) */
+@media (max-width: 768px) {
+	.listItemsContainer,
+	.listItemsContainerDirectors {
+		grid-template-columns: 1fr;
 	}
- 
+
 	.overlay {
 		font-family: var(--secondary-font);
-	  font-size: 0.9rem; /* Adjust font size if needed */
-	  padding: 8px; /* Reduce padding for smaller screens */
+		font-size: 0.9rem;
+		padding: 8px;
 	}
 
 	.videoCard:hover .overlay {
-		
-		opacity: 0; /* Show overlay on hover */
-		
-	 }
-	.filmPageRow{
+		opacity: 0;
+	}
+
+	.filmPageRow {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start; 
-	 }
- }
-
- 
+		align-items: flex-start;
+	}
+}

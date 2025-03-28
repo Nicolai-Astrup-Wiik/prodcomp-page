@@ -6,6 +6,7 @@ import {
   getDocs,
   deleteDoc,
   addDoc,
+  updateDoc,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -88,4 +89,8 @@ export const logout = async () => {
   } catch (error) {
     console.error("Error logging out: ", error);
   }
+};
+export const updateFilmPriority = async (filmId, newPriority) => {
+  const filmDocRef = doc(db, "prodcomp-films", filmId); // fix the collection name
+  await updateDoc(filmDocRef, { priority: newPriority });
 };

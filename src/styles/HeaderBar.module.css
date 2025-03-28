@@ -61,7 +61,7 @@ nav button {
 nav button:hover, 
 nav a:hover {
 	color: var(--highlight-color);
-	text-decoration: underline; /* Optional underline on hover */
+	/*text-decoration: underline; Optional underline on hover*/
 	transform: scale(1.1); /* Slightly increase size on hover */
 	transition: transform 0.3s ease; /* Smooth scaling effect */
 }
@@ -76,12 +76,15 @@ nav a {
 
 nav a:hover {
 	color: var(--highlight-color); /* Highlight color on hover */
-	text-decoration: underline; /* Optional underline on hover */
+	/*text-decoration: underline; Optional underline on hover*/
 	transform: scale(1.1); /* Slightly increase size on hover */
 }
 
 .navButtonActive{
 	color:var(--highlight-color);
+	pointer-events: none; /* disables click, hover, etc. */
+	cursor: default;
+	
 }
  
  @media (max-width: 768px) {

@@ -80,7 +80,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player/vimeo';
 import styles from '../styles/FilmList.module.css';
-import { deleteFilm, getFilms, useAuth } from '../firebase/firebase';
+import { deleteFilm, getFilms, useAuth, updateFilmPriority as updatePriorityInDB } from '../firebase/firebase';
 import { useLocation, useParams } from 'react-router-dom';
 
 export const FilmList = ({ isModalOpen, featuredOnly }) => {
@@ -102,10 +102,21 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 	}, []);
 
 	React.useEffect(() => {
-		let updatedFilms = director ? films.filter((film) => film.director === director) : films;
+		let updatedFilms = director
+			? [...films].filter((film) => film.director === director)
+			: [...films];
+
 		if (featuredOnly) {
 			updatedFilms = updatedFilms.filter((film) => film.featured).sort(() => Math.random() - 0.5);
+		} else {
+			updatedFilms = updatedFilms.sort((a, b) => {
+				if (a.priority && b.priority) return a.priority - b.priority;
+				if (a.priority) return -1;
+				if (b.priority) return 1;
+				return new Date(b.date) - new Date(a.date);
+			});
 		}
+
 		setFilteredFilms(updatedFilms);
 	}, [films, director, featuredOnly]);
 
@@ -117,6 +128,29 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 			console.error('Error deleting film: ', error);
 		}
 	};
+	const updateFilmPriority = async (filmId, newPriority) => {
+		try {
+			const conflictingFilm = films.find(
+				(film) => film.priority === newPriority && film.id !== filmId
+			);
+
+			if (conflictingFilm) {
+				await updatePriorityInDB(conflictingFilm.id, null);
+			}
+
+			await updatePriorityInDB(filmId, newPriority);
+
+			setFilms((prevFilms) =>
+				prevFilms.map((film) => {
+					if (film.id === filmId) return { ...film, priority: newPriority };
+					if (film.id === conflictingFilm?.id) return { ...film, priority: null };
+					return film;
+				})
+			);
+		} catch (error) {
+			console.error('Error updating priority: ', error);
+		}
+	};
 
 	// Handle play event to show the progress bar
 	const handlePlay = (filmId) => {
@@ -124,7 +158,7 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 	};
 
 	return (
-		<div className={styles.listItemsContainer}>
+		<div className={showDirectors ? styles.listItemsContainerDirectors : styles.listItemsContainer}>
 			{filteredFilms.map((film) => (
 				<div key={film.url} className={`${styles.videoCard} ${isModalOpen ? styles.disabled : ''}`}>
 					<ReactPlayer
@@ -140,10 +174,24 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 							<>
 								<div className={styles.title}>{film.title}</div>
 								{user && (
-									<button className={styles.deleteButton} onClick={() => handleDelete(film.id)}>
-										Delete
-									</button>
+									<>
+										<button className={styles.deleteButton} onClick={() => handleDelete(film.id)}>
+											Delete
+										</button>
+										<select
+											className={styles.prioritySelect}
+											value={film.priority || ''}
+											onChange={(e) => updateFilmPriority(film.id, parseInt(e.target.value) || null)}
+										>
+											<option value="">Priority</option>
+											<option value="1">Top 1</option>
+											<option value="2">Top 2</option>
+											<option value="3">Top 3</option>
+											<option value="">None</option>
+										</select>
+									</>
 								)}
+
 							</>
 						)}
 					</div>

@@ -1,7 +1,8 @@
 .paragraph {
 	font-family: var(--primary-font);
 	font-size: medium;
-	margin: var(--spacing-large);
+	margin-left: 5%;
+	margin-right: 5%;
 	text-align: left;
 	line-height: 1.6;
 }
