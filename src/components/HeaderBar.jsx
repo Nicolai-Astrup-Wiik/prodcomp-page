@@ -9,7 +9,7 @@ import { LogoSVG } from './LogoSVG';
 
 Modal.setAppElement('#root');
 
-const menuItems = [{ name: "Regissører", slug: "/directors" }, { name: "Om oss", slug: "/about" }, { name: "Kontakt", slug: "/contact" }]
+const menuItems = [{ name: "REGISSØRER", slug: "/directors" }, { name: "OM OSS", slug: "/about" }, { name: "KONTAKT", slug: "/contact" }]
 
 export const HeaderBar = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);

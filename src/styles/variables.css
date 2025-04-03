@@ -38,10 +38,10 @@
 :root {
 	/* Colors */
 	--primary-color: white; /* Background color */
-	--secondary-color: #222221;; /* Text color (black) */
-	--highlight-color: rgb(255, 204, 0); /* Highlight color */
+	--secondary-color: #222221; /* Text color (black) */
+	--highlight-color: #222221; /* Highlight color */
 	--error-color: red; /* Delete/Error color */
-	--title-color: yellow;
+	--title-color: white;
 
 	/* Font types */
 	--primary-font: 'SansNorm-light';

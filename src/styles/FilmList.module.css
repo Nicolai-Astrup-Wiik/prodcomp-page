@@ -7,6 +7,8 @@
 	width: 100%;
 	box-sizing: border-box;
 	transition: width 0.5s ease-in-out;
+	justify-content: center; /* 👈 Add this */
+	margin: 0 auto;  
 }
 
 .listItemsContainerDirectors {
@@ -18,7 +20,13 @@
 	width: 80%;
 	box-sizing: border-box;
 	transition: width 0.5s ease-in-out;
+	justify-content: center; /* 👈 Add this */
 }
+.listItemsContainer,
+.listItemsContainerDirectors {
+	margin: 0 auto;
+}
+
 
 .filmPageRow {
 	display: flex;
@@ -52,7 +60,7 @@
 	transform: translateX(-50%);
 	width: auto;
 	padding: 10px;
-	color: var(--highlight-color);
+	color: var(--primary-color);
 	font-family: var(--secondary-font);
 	font-size: x-large;
 	font-weight: 600;

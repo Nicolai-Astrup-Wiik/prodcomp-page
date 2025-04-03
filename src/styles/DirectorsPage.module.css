@@ -55,6 +55,7 @@
  /* Hover effect */
  .directorButton:hover {
 	color: var(--highlight-color);
+	transform: scale(1.1);
  }
  
  /* Active Director - Underlined & Slightly Scaled */
