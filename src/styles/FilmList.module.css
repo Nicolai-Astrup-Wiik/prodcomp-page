@@ -60,7 +60,7 @@
 	transform: translateX(-50%);
 	width: auto;
 	padding: 10px;
-	color: var(--primary-color);
+	color: var(--highlight-color);
 	font-family: var(--secondary-font);
 	font-size: x-large;
 	font-weight: 600;

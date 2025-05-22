@@ -1,5 +1,6 @@
 .paragraph {
 	font-family: var(--primary-font);
+	color: var(--secondary-color);
 	font-size: medium;
 	margin-left: 5%;
 	margin-right: 5%;

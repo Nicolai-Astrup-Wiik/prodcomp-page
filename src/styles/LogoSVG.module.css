@@ -41,3 +41,6 @@
 
 
 
+ .invertedSvg {
+	filter: invert(100%);
+ }

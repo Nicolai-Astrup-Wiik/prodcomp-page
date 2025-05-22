@@ -6,7 +6,6 @@ import { useAuth } from '../firebase/firebase'; // Import the useAuth hook
 import { LogoSVG } from './LogoSVG';
 //import { ReactComponent as Logo } from '../assets/pnhmr.svg'; // Import SVG as a React component
 
-
 Modal.setAppElement('#root');
 
 const menuItems = [{ name: "REGISSØRER", slug: "/directors" }, { name: "OM OSS", slug: "/about" }, { name: "KONTAKT", slug: "/contact" }]
@@ -19,11 +18,13 @@ export const HeaderBar = () => {
 
   return (
     <>
-      {/* SVG as a Link to the home page */}
+      {/* SVG as a Link to the home page - Keep original structure */}
       <Link to="/" className={styles.linkContainer}>
         <LogoSVG />
-      </Link >
-      <nav>
+      </Link>
+
+      {/* Only change the nav element */}
+      <nav className={styles.rightAlignedNav}>
         {menuItems.map((item) => {
           const active = location.pathname.includes(item.slug)
           return <Link className={active ? styles.navButtonActive : styles.navButton} key={item.slug} to={item.slug}>{item.name}</Link>
@@ -36,7 +37,6 @@ export const HeaderBar = () => {
           </Link>
         )}
       </nav>
-
     </>
   );
 };

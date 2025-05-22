@@ -1,14 +1,10 @@
 import React from 'react'
-
 import style from "../styles/LogoSVG.module.css"
-
-
-
 
 export const LogoSVG = () => {
 	return (<div className={style.logoContainer}>
-		<img className={style.logoClass} src="/logos/logo.png" alt="Logo" />
-		<svg className={style.logoClass} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.7 202.8"><defs>
+		<img className={style.logoClass} src="/logos/pappenheimer_rgb_white_bg_500.png" alt="Logo" />
+		<svg className={`${style.logoClass} ${style.invertedSvg}`} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 323.7 202.8"><defs>
 
 		</defs>
 			<polygon className={style.svgfill} points="191.01 87.46 191.01 0 173.49 0 173.49 62.39 124.13 0 103.43 0 103.43 87.46 120.94 87.46 120.94 24.2 170.99 87.46 191.01 87.46" /><path className={style.svgfill} d="M70.46,0H17.52s0,34.97,0,34.97H0v17.52h17.52v34.97h17.52v-34.99h35.42c14.47,0,26.23-11.77,26.23-26.23S84.92,0,70.46,0ZM70.46,34.95h-35.42v-17.44h35.42c4.81,0,8.72,3.91,8.72,8.72s-3.91,8.72-8.72,8.72Z" />
@@ -21,11 +17,8 @@ export const LogoSVG = () => {
 			<polygon className={style.svgfill} points="104.2 202.8 104.2 188.56 101.35 188.56 101.35 198.72 93.32 188.56 91.46 188.56 89.95 188.56 89.95 202.8 92.8 202.8 92.8 192.5 100.95 202.8 104.2 202.8" /><path className={style.svgfill} d="M34.45,202.8l1.14-2.86h5.49l1.14,2.86h3.07l-5.68-14.23h-2.55l-5.68,14.23h3.07ZM38.34,193.06l1.61,4.03h-3.21l1.61-4.03Z" /><path className={style.svgfill} d="M55.23,188.56h-5.76s-2.85,0-2.85,0v14.23h2.85v-5.69h5.76c2.35,0,4.27-1.91,4.27-4.27s-1.91-4.27-4.27-4.27ZM55.23,194.25h-5.76v-2.84h5.76c.78,0,1.42.64,1.42,1.42s-.64,1.42-1.42,1.42Z" /><path className={style.svgfill} d="M69.43,188.56h-5.76s-2.85,0-2.85,0v14.23h2.85v-5.69h5.76c2.35,0,4.27-1.91,4.27-4.27s-1.91-4.27-4.27-4.27ZM69.43,194.25h-5.76v-2.84h5.76c.78,0,1.42.64,1.42,1.42s-.64,1.42-1.42,1.42Z" /><path className={style.svgfill} d="M187.58,192.83c0-2.35-1.91-4.27-4.27-4.27h-5.76s-2.85,0-2.85,0v14.23h2.85v-5.69h2.63l3.88,5.69h3.45l-3.89-5.71c2.21-.16,3.96-2.01,3.96-4.26ZM177.54,191.42h5.76c.78,0,1.42.64,1.42,1.42s-.64,1.42-1.42,1.42h-5.76v-2.84Z" />
 			<polygon className={style.svgfill} points="117.92 188.55 117.92 194.25 109.37 194.25 109.37 188.55 106.52 188.55 106.52 202.8 109.37 202.8 109.37 197.1 117.92 197.1 117.92 202.8 120.77 202.8 120.77 188.55 117.92 188.55" />
 			<polygon className={style.svgfill} points="140.87 188.56 138.02 188.56 138.02 202.8 140.87 202.8 140.87 202.79 140.87 188.56" /><path className={style.svgfill} d="M28.89,188.56h-5.76s-2.85,0-2.85,0v5.69h-3.14v2.85h3.14v5.69h2.85v-5.69h5.76c2.35,0,4.27-1.91,4.27-4.27s-1.91-4.27-4.27-4.27ZM28.89,194.25h-5.76v-2.84h5.76c.78,0,1.42.64,1.42,1.42s-.64,1.42-1.42,1.42Z" /></svg>
-
-
 	</div>
 	)
-
 }
 
 {/*<svg className={style.logoClass} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 527.23 118.34"><defs>

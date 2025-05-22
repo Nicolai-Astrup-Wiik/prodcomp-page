@@ -1,6 +1,8 @@
 
 
-
+a{
+	color: var(--secondary-color);
+}
 
 .contactCardContainer{
 display: flex;
@@ -9,7 +11,8 @@ margin: var(--spacing-large);
 margin-top: 10vh ;
 justify-content: left;
 align-items: start ;
-gap: var(--spacing-xl)
+gap: var(--spacing-xl);
+color: var(--secondary-color)
 }
 
 .contactCard{

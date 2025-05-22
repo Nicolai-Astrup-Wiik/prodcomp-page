@@ -37,9 +37,9 @@
 
 :root {
 	/* Colors */
-	--primary-color: white; /* Background color */
-	--secondary-color: #222221; /* Text color (black) */
-	--highlight-color: #222221; /* Highlight color */
+	--primary-color: #222221; /* Background color */
+	--secondary-color: white; /* Text color (black) */
+	--highlight-color: white; /* Highlight color */
 	--error-color: red; /* Delete/Error color */
 	--title-color: white;
 
