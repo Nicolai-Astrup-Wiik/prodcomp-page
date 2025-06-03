@@ -1,6 +1,7 @@
 /* Footer Container */
 .footer {
 	font-family: var(--secondary-font);
+	color: var(--secondary-color);
 	position: fixed;
 	display: flex;
 	justify-content: space-between; /* Space between left and right items */
@@ -8,7 +9,7 @@
 	/*margin-left: var(--spacing-small);*/
 	bottom: 0;
 	width: 100%;
-	background-color: var(--primary-color);
+	background-color: transparent;
 	height: 50px; /* Define a consistent height */
 	padding: 10px 20px;
 	box-sizing: border-box; /* Includes padding in width calculation */

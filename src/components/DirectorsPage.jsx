@@ -6,7 +6,9 @@ const directors = [
 	{ name: 'Gaute Hesthagen', slug: 'gaute' },
 	{ name: 'Sigve Aspelund', slug: 'sigve' },
 	{ name: 'Nico & Links', slug: 'nico&links' },
-	{ name: 'Liv Mari Mortensen', slug: 'livmari' }
+	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
+	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
+	{ name: 'Alf Løvvold', slug: 'alflovvold' }
 	//{ name: 'Oskar Johansen', slug: 'oskar' },
 	//{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' }
 ];
