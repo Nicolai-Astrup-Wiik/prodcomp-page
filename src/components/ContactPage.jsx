@@ -10,12 +10,12 @@ const ContactPage = () => {
 			<a href="mailto:ivan@pappenheimer.no">ivan@pappenheimer.no</a>
 		</div>
 
-		<div className={styles.contactCard}>
+		{/*<div className={styles.contactCard}>
 			<div className={styles.contactTitle}>Beril Holte Rasmussen</div>
 			<div>Backoffice</div>
 			<div>+47 952 02 590</div>
 			<a href="mailto:beril@pappenheimer.no">beril@pappenheimer.no</a>
-		</div>
+		</div>*/}
 
 	</div>
 	)
