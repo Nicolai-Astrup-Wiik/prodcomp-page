@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const directors = [
 	{ name: 'Gaute Hesthagen', slug: 'gaute' },
 	{ name: 'Sigve Aspelund', slug: 'sigve' },
-	{ name: 'Nico & Links', slug: 'nico&links' },
+	{ name: 'Nico & Espen', slug: 'nico&links' },
 	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
 	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
 	{ name: 'Alf Løvvold', slug: 'alflovvold' }
