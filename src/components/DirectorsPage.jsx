@@ -8,9 +8,9 @@ const directors = [
 	{ name: 'Nico & Espen', slug: 'nico&links' },
 	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
 	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
-	{ name: 'Alf Løvvold', slug: 'alflovvold' }
+	{ name: 'Alf Løvvold', slug: 'alflovvold' },
 	//{ name: 'Oskar Johansen', slug: 'oskar' },
-	//{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' }
+	{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' }
 ];
 export const DirectorsPage = () => {
 	const { director } = useParams()
