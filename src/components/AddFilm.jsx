@@ -240,7 +240,6 @@ export const AddFilm = () => {
 						<option value="default">Velg regissør</option>
 						<option value="nico&links">Nico & Links</option>
 						<option value="sune">Sune</option>
-						<option value="oskar">Oskar</option>
 						<option value="mauritz">Mauritz</option>
 						<option value="livmari">Liv Mari</option>
 						<option value="alflovvold">Alf</option>
