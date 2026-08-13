@@ -3,8 +3,8 @@ import styles from '../styles/DirectorsPage.module.css'; // Ensure correct impor
 import { useNavigate, useParams } from 'react-router-dom';
 
 const directors = [
-	{ name: 'Gaute Hesthagen', slug: 'gaute' },
-	{ name: 'Sigve Aspelund', slug: 'sigve' },
+	//{ name: 'Gaute Hesthagen', slug: 'gaute' },
+	//{ name: 'Sigve Aspelund', slug: 'sigve' },
 	{ name: 'Nico & Espen', slug: 'nico&links' },
 	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
 	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
