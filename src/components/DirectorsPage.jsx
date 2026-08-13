@@ -3,14 +3,11 @@ import styles from '../styles/DirectorsPage.module.css'; // Ensure correct impor
 import { useNavigate, useParams } from 'react-router-dom';
 
 const directors = [
-	//{ name: 'Gaute Hesthagen', slug: 'gaute' },
-
 	{ name: 'Nico & Espen', slug: 'nico&links' },
 	{ name: 'Sune Maroni', slug: 'sune' },
 	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
 	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
 	{ name: 'Alf Løvvold', slug: 'alflovvold' },
-	//{ name: 'Oskar Johansen', slug: 'oskar' },
 	{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' }
 ];
 export const DirectorsPage = () => {

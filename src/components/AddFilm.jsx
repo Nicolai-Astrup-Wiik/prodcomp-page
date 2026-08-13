@@ -238,9 +238,8 @@ export const AddFilm = () => {
 						value={filmValues.director}
 					>
 						<option value="default">Velg regissør</option>
-						<option value="gaute">Gaute</option>
 						<option value="nico&links">Nico & Links</option>
-						<option value="sigve">Sigve</option>
+						<option value="sune">Sune</option>
 						<option value="oskar">Oskar</option>
 						<option value="mauritz">Mauritz</option>
 						<option value="livmari">Liv Mari</option>
