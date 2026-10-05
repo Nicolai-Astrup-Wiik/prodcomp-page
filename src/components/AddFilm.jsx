@@ -244,6 +244,7 @@ export const AddFilm = () => {
 						<option value="livmari">Liv Mari</option>
 						<option value="alflovvold">Alf</option>
 						<option value="kristofferklunknyborg">Kristoffer</option>
+						<option value="pnhmr">PNHMR</option>
 					</select>
 					<div className={styles.ErrorContainer}>
 						{errors.director && <p>{errors.director}</p>}
