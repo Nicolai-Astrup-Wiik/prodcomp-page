@@ -7,6 +7,7 @@ import {
   deleteDoc,
   addDoc,
   updateDoc,
+  FieldPath,
 } from "firebase/firestore";
 import {
   getAuth,
@@ -90,7 +91,20 @@ export const logout = async () => {
     console.error("Error logging out: ", error);
   }
 };
-export const updateFilmPriority = async (filmId, newPriority) => {
-  const filmDocRef = doc(db, "prodcomp-films", filmId); // fix the collection name
-  await updateDoc(filmDocRef, { priority: newPriority });
+export const updateFilmPriority = async (
+  filmId,
+  newPriority,
+  director = null
+) => {
+  const filmDocRef = doc(db, "prodcomp-films", filmId);
+
+  if (director) {
+    await updateDoc(
+      filmDocRef,
+      new FieldPath("directorPriorities", director),
+      newPriority
+    );
+  } else {
+    await updateDoc(filmDocRef, { priority: newPriority });
+  }
 };

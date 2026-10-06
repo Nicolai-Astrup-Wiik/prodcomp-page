@@ -91,6 +91,13 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 	const location = useLocation();
 	const showDirectors = location.pathname.includes('director');
 	const user = useAuth();
+	const getPriority = (film) => {
+		if (director) {
+			return film.directorPriorities?.[director] ?? null;
+		}
+
+		return film.priority ?? null;
+	};
 
 	React.useEffect(() => {
 		getFilms().then((fetchedFilms) => {
@@ -107,14 +114,28 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 			: [...films];
 
 		if (featuredOnly) {
-			updatedFilms = updatedFilms.filter((film) => film.featured).sort(() => Math.random() - 0.5);
+
+			updatedFilms = updatedFilms
+				.filter((film) => film.featured)
+				.sort(() => Math.random() - 0.5);
+
 		} else {
+
 			updatedFilms = updatedFilms.sort((a, b) => {
-				if (a.priority && b.priority) return a.priority - b.priority;
-				if (a.priority) return -1;
-				if (b.priority) return 1;
+
+				const priorityA = getPriority(a);
+				const priorityB = getPriority(b);
+
+				if (priorityA && priorityB) return priorityA - priorityB;
+
+				if (priorityA) return -1;
+
+				if (priorityB) return 1;
+
 				return new Date(b.date) - new Date(a.date);
+
 			});
+
 		}
 
 		setFilteredFilms(updatedFilms);
@@ -129,29 +150,93 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 		}
 	};
 	const updateFilmPriority = async (filmId, newPriority) => {
+
 		try {
-			const conflictingFilm = films.find(
-				(film) => film.priority === newPriority && film.id !== filmId
-			);
+
+			const conflictingFilm = films.find((film) => {
+
+				if (film.id === filmId) return false;
+
+				if (director) {
+					return (
+						film.director === director &&
+						getPriority(film) === newPriority
+					);
+				}
+
+				return film.priority === newPriority;
+
+			});
 
 			if (conflictingFilm) {
-				await updatePriorityInDB(conflictingFilm.id, null);
+
+				await updatePriorityInDB(
+					conflictingFilm.id,
+					null,
+					director || null
+				);
+
 			}
 
-			await updatePriorityInDB(filmId, newPriority);
+			await updatePriorityInDB(
+				filmId,
+				newPriority,
+				director || null
+			);
 
 			setFilms((prevFilms) =>
 				prevFilms.map((film) => {
-					if (film.id === filmId) return { ...film, priority: newPriority };
-					if (film.id === conflictingFilm?.id) return { ...film, priority: null };
+
+					if (film.id === filmId) {
+
+						if (director) {
+							return {
+								...film,
+								directorPriorities: {
+									...(film.directorPriorities || {}),
+									[director]: newPriority
+								}
+							};
+						}
+
+						return {
+							...film,
+							priority: newPriority
+						};
+
+					}
+
+					if (film.id === conflictingFilm?.id) {
+
+						if (director) {
+							return {
+								...film,
+								directorPriorities: {
+									...(film.directorPriorities || {}),
+									[director]: null
+								}
+							};
+						}
+
+						return {
+							...film,
+							priority: null
+						};
+
+					}
+
 					return film;
+
 				})
 			);
-		} catch (error) {
-			console.error('Error updating priority: ', error);
-		}
-	};
 
+		} catch (error) {
+
+			console.error('Error updating priority: ', error);
+
+		}
+
+	};
 	// Handle play event to show the progress bar
 	const handlePlay = (filmId) => {
 		setPlayingFilmId(filmId);
@@ -180,7 +265,7 @@ export const FilmList = ({ isModalOpen, featuredOnly }) => {
 										</button>
 										<select
 											className={styles.prioritySelect}
-											value={film.priority || ''}
+											value={getPriority(film) || ''}
 											onChange={(e) => updateFilmPriority(film.id, parseInt(e.target.value) || null)}
 										>
 											<option value="">Priority</option>
