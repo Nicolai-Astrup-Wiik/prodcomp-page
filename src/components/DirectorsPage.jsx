@@ -6,7 +6,9 @@ const directors = [
 	{ name: 'Sune Maroni', slug: 'sune' },
 	{ name: 'Nicolai Astrup Wiik & Espen Lervaag', slug: 'nico&links' },
 	{ name: 'Liv Mari Mortensen', slug: 'livmari' },
+	{ name: 'Alex Herron', slug: 'aherron' },
 	{ name: 'Kristoffer Klunk Nyborg', slug: 'kristofferklunknyborg' },
+	{ name: 'Kamilla Alnes', slug: 'kamillaa' },
 	{ name: 'Alf Løvvold', slug: 'alflovvold' },
 	{ name: 'Mauritz Brekke Solberg', slug: 'mauritz' },
 	{ name: 'Produced by PNHMR', slug: 'pnhmr' }

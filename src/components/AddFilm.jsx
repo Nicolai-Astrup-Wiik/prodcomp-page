@@ -241,9 +241,11 @@ export const AddFilm = () => {
 						<option value="nico&links">Nico & Links</option>
 						<option value="sune">Sune</option>
 						<option value="mauritz">Mauritz</option>
+						<option value="aherron">Alex Herron</option>
 						<option value="livmari">Liv Mari</option>
 						<option value="alflovvold">Alf</option>
 						<option value="kristofferklunknyborg">Kristoffer</option>
+						<option value="kamillaa">Kamilla</option>
 						<option value="pnhmr">PNHMR</option>
 					</select>
 					<div className={styles.ErrorContainer}>
